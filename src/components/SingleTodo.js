@@ -6,6 +6,7 @@ import Delete from '../icons/Delete'
 import Done from '../icons/Done'
 import DoneActive from '../icons/DoneActive'
 import Edit from '../icons/Edit'
+import Left from '../icons/Left'
 
 const SingleTodo = ({ task }) => {
   const setTodoList = useSetRecoilState(todoListState)
@@ -80,6 +81,10 @@ const SingleTodo = ({ task }) => {
             {task.content}
           </span>
         )}
+
+        <div className='h-9 w-9 animate-pulse group-hover:hidden sm:hidden'>
+          <Left className='h-full w-full rounded-lg p-1.5 text-primary hover:bg-white hover:bg-opacity-80' />
+        </div>
 
         <div className='hidden items-center gap-2 group-hover:flex sm:flex '>
           <button
