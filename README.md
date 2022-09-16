@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+<img src="./public/images/logo.png" width = 50% >
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A To-Do List App to Organize Your Work & Life
 
-## Available Scripts
+<table style="padding:10px">
+  <tr> 
+    <td><img src="./public/images/loginpage.png" width = 100%></td>
+    <td><img src="./public/images/noTask.png" width = 100%></td>
+  </tr>
+</table>
+<table style="padding:10px">
+  <tr> 
+    <td><img src="./public/images/tasklistLight.png" width = 100%></td>
+    <td><img src="./public/images/tasklistDark.png" width = 100%></td>
+  </tr>
+</table>
+<table style="padding:10px">
+  <tr> 
+    <td><img src="./public/images/edit.png" width = 100%></td>
+    <td><img src="./public/images/active.png" width = 100%></td>
+  </tr>
+</table>
+<table style="padding:10px">
+  <tr> 
+    <td><img src="./public/images/completed.png" width = 100%></td>
+    <td><img src="./public/images/noCompleted.png" width = 100%></td>
+  </tr>
+</table>
 
-In the project directory, you can run:
+## ✨ About The Project
 
-### `npm start`
+The project was developed with React.js by using React Hooks, styled with Tailwind CSS.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [**React**](https://reactjs.org/)
+- [**Tailwind CSS**](https://tailwindcss.com/)
 
-### `npm test`
+### Library
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [**Recoil**](https://recoiljs.org/)
+- [**Axios**](https://axios-http.com/)
 
-### `npm run build`
+### API
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [**mock API**](https://mockapi.io/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  
+## ⚡ Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+These instructions will get you a copy of the project up and running on your local machine for development and testing
+purposes.
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The project can be built with npm or yarn, so choose one of the approach bellow in case you don't have any installed on your system.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- npm is distributed with Node.js which means that when you download Node.js,
+  you automatically get npm installed on your computer. [Download Node.js](https://nodejs.org/en/download/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+or
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Yarn is a package manager built by Facebook Team and seems to be faster than npm in general. [Download Yarn](https://yarnpkg.com/getting-started)
 
-## Learn More
+### Installing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+First clone this repository.
+```bash
+$ git clone https://github.com/fundakartal/todo-app-react.git
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Install dependencies. Make sure you already have [`nodejs`](https://nodejs.org/en/) & [`npm`](https://www.npmjs.com/) installed in your system.
+```bash
+$ npm install # or yarn
+```
 
-### Code Splitting
+Run it
+```bash
+$ npm start # or yarn start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📬 Contact
 
-### Making a Progressive Web App
+[![image](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/fundakartaI)
+[![image](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:kartalfunda01@gmail.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## ⭐️ Show Your Support
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Please give a ⭐️ if this project helped you!
