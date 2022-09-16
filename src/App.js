@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { loginState, todoListState, userState } from './atoms/todoAtom'
 import Header from './components/Header'
+import Input from './components/Input'
 import Login from './components/Login'
 import todoService from './services/Todos'
 
@@ -32,7 +33,7 @@ const App = () => {
           handleLogout={handleLogout}
           percentage={percentage}
         />
-        {/* input */}
+        <Input />
         {/* todo list */}
         {/* footer */}
       </div>
