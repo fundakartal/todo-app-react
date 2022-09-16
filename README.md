@@ -1,7 +1,7 @@
 <img src="./public/images/logo.png" width = 50% >
 
 A To-Do List App to Organize Your Work & Life
-
+## Screenshots
 <table style="padding:10px">
   <tr> 
     <td><img src="./public/images/loginpage.png" width = 100%></td>
@@ -67,6 +67,23 @@ or
 First clone this repository.
 ```bash
 $ git clone https://github.com/fundakartal/todo-app-react.git
+```
+
+Sign up to [mock API](https://mockapi.io/) and create a todo app.
+
+Schema example:
+
+| Parameter     | Type        |
+| :------------ | :---------- |
+| `id`          | `Object ID` |
+| `content`     | `String`    |
+| `isCompleted` | `Boolean`   |
+
+
+Create a file at the root of the project called .env.local with the following contents:
+
+```sh
+REACT_APP_URL = YOUR API ENDPOINT
 ```
 
 Install dependencies. Make sure you already have [`nodejs`](https://nodejs.org/en/) & [`npm`](https://www.npmjs.com/) installed in your system.
