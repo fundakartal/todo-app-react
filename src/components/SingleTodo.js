@@ -8,7 +8,7 @@ import DoneActive from '../icons/DoneActive'
 import Edit from '../icons/Edit'
 
 const SingleTodo = ({ task }) => {
-  const setTodos = useSetRecoilState(todoListState)
+  const setTodoList = useSetRecoilState(todoListState)
   const [errorMessage, setErrorMessage] = useState(null)
   const [edit, setEdit] = useState(false)
   const [editedTask, setEditedTask] = useState(task.content)
@@ -20,14 +20,14 @@ const SingleTodo = ({ task }) => {
     }
   }, [edit])
 
-  const updateTodos = () => {
-    todoService.getAll().then((updatedTodos) => setTodos(updatedTodos))
+  const updateTodoList = () => {
+    todoService.getAll().then((updatedTodoList) => setTodoList(updatedTodoList))
   }
 
   const handleDelete = (e, id) => {
     e.preventDefault()
     todoService.deleteItem(id).then(() => {
-      updateTodos()
+      updateTodoList()
     })
   }
 
@@ -35,7 +35,7 @@ const SingleTodo = ({ task }) => {
     e.preventDefault()
     const updatedTask = { ...task, isCompleted: !task.isCompleted }
     todoService.update(id, updatedTask).then(() => {
-      updateTodos()
+      updateTodoList()
     })
   }
 
@@ -49,12 +49,12 @@ const SingleTodo = ({ task }) => {
     }
     const newTask = { ...task, content: editedTask.trim() }
     todoService.update(id, newTask).then(() => {
-      updateTodos()
+      updateTodoList()
     })
   }
 
   return (
-    <div>
+    <div className='group'>
       <form
         onSubmit={(e) => {
           handleEdit(e, task.id)
@@ -68,19 +68,20 @@ const SingleTodo = ({ task }) => {
             type='text'
             value={editedTask}
             ref={editRef}
+            maxLength={280}
             onChange={({ target }) => setEditedTask(target.value)}
           />
         ) : (
           <span
             className={`${
               task.isCompleted && 'line-through opacity-30'
-            } text-black opacity-60 dark:text-white dark:opacity-70 lg:text-lg`}
+            } truncate text-left text-black opacity-60 hover:overflow-visible hover:whitespace-normal dark:text-white dark:opacity-70 lg:text-lg`}
           >
             {task.content}
           </span>
         )}
 
-        <div className='flex items-center gap-2 '>
+        <div className='hidden items-center gap-2 group-hover:flex sm:flex '>
           <button
             onClick={() => {
               setEdit(!edit)

@@ -8,6 +8,7 @@ const TodoList = ({ todoList }) => {
   const activeTasks = todoList.filter((todo) => !todo.isCompleted)
   const filteredTasks =
     openTab === 1 ? todoList : openTab === 2 ? activeTasks : completedTasks
+
   return (
     <div className='my-4 w-full rounded-xl bg-white bg-opacity-0 p-1 text-white shadow-lg backdrop-blur-lg dark:bg-black dark:bg-opacity-0'>
       <h1 className='m-4 flex text-2xl text-black opacity-70 dark:text-gray-100'>

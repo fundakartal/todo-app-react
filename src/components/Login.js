@@ -40,6 +40,7 @@ const Login = () => {
           <img
             src='/images/hello.svg'
             alt='a cute girl saying hello'
+            aria-hidden='true'
             className='w-full'
           />
         </div>

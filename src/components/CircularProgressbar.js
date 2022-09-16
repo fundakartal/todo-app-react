@@ -22,7 +22,7 @@ const CircularProgressbar = ({ percentage }) => {
       <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
         <h2 className='text-4xl font-bold text-primary'>
           {Math.floor(percentage)}
-          <span>%</span>
+          <span className="opacity-80 font-semibold">%</span>
         </h2>
       </div>
     </div>

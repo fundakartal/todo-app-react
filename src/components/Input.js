@@ -10,7 +10,7 @@ const Input = () => {
   const setTodoList = useSetRecoilState(todoListState)
   const inputRef = useRef(null)
 
-  const updateTodos = () => {
+  const updateTodoList = () => {
     todoService.getAll().then((returnedTodos) => setTodoList(returnedTodos))
   }
 
@@ -26,7 +26,7 @@ const Input = () => {
       isCompleted: false,
     }
     todoService.create(taskObj).then(() => {
-      updateTodos()
+      updateTodoList()
     })
     setTask('')
     inputRef.current?.blur()
@@ -42,16 +42,17 @@ const Input = () => {
       >
         <div className='relative flex grow items-center'>
           <input
-            className='blur:shadow-none h-12 w-full rounded-full bg-white bg-opacity-20 pl-4 font-light shadow-special-before outline-none drop-shadow-lg backdrop-blur-lg transition-shadow placeholder:text-gray-600 focus:shadow-special dark:bg-black dark:bg-opacity-5 dark:text-white dark:placeholder:text-slate-200 md:h-16 md:pl-8 md:text-xl lg:text-2xl'
+            className='blur:shadow-none h-12 w-full rounded-full bg-white bg-opacity-20 pr-16 pl-4 font-light shadow-special-before outline-none drop-shadow-lg backdrop-blur-lg transition-shadow placeholder:text-gray-600 focus:shadow-special dark:bg-black dark:bg-opacity-5 dark:text-white dark:placeholder:text-slate-200 md:h-16 md:pl-8 md:text-xl lg:text-2xl'
             required
             type='text'
             placeholder='Type a new task'
             value={task}
             onChange={({ target }) => setTask(target.value)}
             ref={inputRef}
+            maxLength={280}
           />
           <button
-            disabled={task.trim().length < 3}
+            // disabled={task.trim().length < 3}
             onClick={addNewTask}
             type='submit'
             className='absolute right-2 flex h-8 w-8 items-center justify-center rounded-[100%] bg-white bg-opacity-80 drop-shadow-lg backdrop-blur-lg hover:bg-gray-100 disabled:opacity-30 dark:bg-opacity-60 md:h-12 md:w-12'

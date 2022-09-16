@@ -5,19 +5,23 @@ import ButtonTab from './ButtonTab'
 
 const Tabs = () => {
   const [openTab, setOpenTab] = useRecoilState(tabState)
-  const [todos, setTodos] = useRecoilState(todoListState)
-  const idList = todos.map((todo) => todo.id)
-  const updateTodos = () => {
-    todoService.getAll().then((updatedTodos) => setTodos(updatedTodos))
+  const [todoList, setTodoList] = useRecoilState(todoListState)
+  const completedTasks = todoList.filter((todo) => todo.isCompleted)
+  const idList = completedTasks.map((todo) => todo.id)
+
+  const updateTodoList = () => {
+    todoService.getAll().then((updatedTodoList) => setTodoList(updatedTodoList))
   }
+
   const handleDelete = (e, idList) => {
     e.preventDefault()
     idList.map((id) =>
       todoService.deleteItem(id).then(() => {
-        updateTodos()
+        updateTodoList()
       })
     )
   }
+
   return (
     <div className='flex grow flex-wrap gap-4 sm:justify-between lg:max-w-xl'>
       <ButtonTab
@@ -50,11 +54,13 @@ const Tabs = () => {
         }
         text='Completed'
       />
-      <ButtonTab
-        onClick={(e) => handleDelete(e, idList)}
-        className={'bg-red-700 text-white max-w-max'}
-        text='Clear All'
-      />
+      {completedTasks.length > 0 && (
+        <ButtonTab
+          onClick={(e) => handleDelete(e, idList)}
+          className={'max-w-max bg-red-700 text-white'}
+          text='Clear Completed'
+        />
+      )}
     </div>
   )
 }
