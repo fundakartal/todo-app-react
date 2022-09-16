@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { loginState, todoListState, userState } from './atoms/todoAtom'
+import Footer from './components/Footer'
 import Header from './components/Header'
 import Input from './components/Input'
 import Login from './components/Login'
@@ -12,6 +13,7 @@ const App = () => {
   const [todoList, setTodoList] = useRecoilState(todoListState)
   const user = useRecoilValue(userState)
   const completedTasks = todoList.filter((todo) => todo.isCompleted)
+  const leftTasks = todoList.filter((todo) => !todo.isCompleted)
   const percentage = 100 * (completedTasks?.length / todoList?.length) || 0
 
   useEffect(() => {
@@ -34,9 +36,11 @@ const App = () => {
           handleLogout={handleLogout}
           percentage={percentage}
         />
-        <Input />
-        <TodoList todoList={todoList} />
-        {/* footer */}
+        <main>
+          <Input />
+          <TodoList todoList={todoList} />
+        </main>
+        {todoList.length > 0 && <Footer leftTasksNumber={leftTasks.length} />}
       </div>
     </div>
   )
