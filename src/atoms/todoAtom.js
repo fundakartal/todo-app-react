@@ -14,3 +14,8 @@ export const todoListState = atom({
   key: 'todoListState',
   default: [],
 })
+
+export const tabState = atom({
+  key: 'tabState',
+  default: 1,
+})
