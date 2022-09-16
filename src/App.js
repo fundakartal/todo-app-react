@@ -4,6 +4,7 @@ import { loginState, todoListState, userState } from './atoms/todoAtom'
 import Header from './components/Header'
 import Input from './components/Input'
 import Login from './components/Login'
+import TodoList from './components/TodoList'
 import todoService from './services/Todos'
 
 const App = () => {
@@ -34,7 +35,7 @@ const App = () => {
           percentage={percentage}
         />
         <Input />
-        {/* todo list */}
+        <TodoList todoList={todoList} />
         {/* footer */}
       </div>
     </div>
